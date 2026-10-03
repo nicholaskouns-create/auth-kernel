@@ -1,6 +1,8 @@
 # Authorization kernel
 
 > **Main entry portal:** [The Mathematical City](https://nicholaskouns-create.github.io/website/) — explore the districts, interactive labs, and research index.
+>
+> **[Explore PiP Manta](https://nicholaskouns-create.github.io/E47-Kartekeya/interfaces/pip-manta/embed.html)**
 
 Invoke requires Candidate, the syntactic gate, a live nonce, and an active subject.
 
