@@ -1,0 +1,34 @@
+Γ ⊢ C
+
+G_syn := Issued ∧ InWindow ∧ ToolOk ∧ ArgsOk
+X := Bound ∧ Fresh_Σ
+Bound(d) ⇔ Active(subj(d))
+Invoke := Candidate ∧ G_syn ∧ X ∧ Active(subj(d))
+
+ValidSig(d) ⊢ V_obs(d)
+ValidSig(d) ⊬ Invoke
+ValidSig(d) ⊬ Issued
+ValidSig(d) ⊬ Active
+ValidSig(d) ⊬ Amnesty
+ValidSig(d) ⊬ Fresh_Σ
+
+Candidate, G_syn, X, Active(subj(d)) ⊢ Invoke
+Invoke ⇔ Candidate ∧ G_syn ∧ X ∧ Active(subj(d))
+
+¬Active(subj(d)) ⊢ ¬Invoke      SUBJ_ACTIVE
+Bind(a) ∈ Σ ∧ ¬Amnesty(a) ∧ nbf_b ≤ t_Σ < exp_b ⊢ Active(a)
+Amnesty(a) ⊢ ¬Active(a)
+Bind(a) ∉ Σ ⊢ ¬Active(a)
+t_Σ < nbf_b ∨ t_Σ ≥ exp_b ⊢ ¬Active(a)
+¬X ⊢ ¬Invoke
+¬Fresh_Σ ⊢ ¬X
+¬Fresh_Σ ⊢ ¬Invoke
+
+Amnesty(a) ⊢ ¬Active(a)      AX_AMNESTY
+Amnesty(subj(d)) ⊢ ¬Candidate(d)
+Amnesty(subj(d)) ⊢ ¬Bound(d)
+
+Σ ; Γ ⊢ ALLOW ▷ Σ[x.nonce ↦ SPENT]    if Invoke
+Σ ; Γ ⊢ REFUSE(P)                     if ¬P, P the first failed conjunct
+ALLOW re-verifies ValidSig, then claims the nonce. Sig does not derive Invoke.
+Issued(d) iff the presented record matches the stored issue record.
