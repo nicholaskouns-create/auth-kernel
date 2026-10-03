@@ -1,5 +1,7 @@
 # Authorization kernel
 
+> **Main entry portal:** [The Mathematical City](https://nicholaskouns-create.github.io/website/) — explore the districts, interactive labs, and research index.
+
 Invoke requires Candidate, the syntactic gate, a live nonce, and an active subject.
 
 A valid signature observes. It does not derive Invoke.
