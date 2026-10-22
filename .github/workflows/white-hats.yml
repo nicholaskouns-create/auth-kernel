@@ -4,6 +4,9 @@ on:
     paths:
       - 'auth_kernel.py'
       - 'white_hats.py'
+      - 'anticipatory.py'
+      - 'examples/**'
+      - 'pyproject.toml'
       - 'validation/**'
       - '.github/workflows/white-hats.yml'
   pull_request:

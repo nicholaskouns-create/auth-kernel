@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "white-hats-anticipatory"
+version = "0.1.0"
+description = "Local provenance, tool descriptor pinning and bounded workflow forecasting"
+requires-python = ">=3.10"
+readme = "ANTICIPATORY.md"
+license = {file = "LICENSE"}
+authors = [{name = "Nicholas Shane Kouns"}]
+
+[project.scripts]
+white-hats-forecast = "anticipatory:main"
+
+[tool.setuptools]
+py-modules = ["anticipatory", "auth_kernel", "white_hats", "flow_shield"]
