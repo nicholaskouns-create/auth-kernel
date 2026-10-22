@@ -1,0 +1,22 @@
+name: FlowShield browser engine regression
+on:
+  push:
+    paths:
+      - 'docs/flowshield*.js'
+      - 'docs/index.html'
+      - 'tests/flowshield-v2.test.mjs'
+      - '.github/workflows/flowshield-regression.yml'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run deterministic authorization regressions
+        run: node tests/flowshield-v2.test.mjs
