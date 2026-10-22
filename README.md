@@ -18,3 +18,15 @@ python validation/authorization_invariant_20261008.py
 ```
 
 Rules: `RULES.txt`. Implementation: `auth_kernel.py`. Reference model and invariant tests: `validation/`.
+
+## Transaction intent defense
+
+[Transaction intent preservation](proofs/TRANSACTION_INTENT_DEFENSE.md) applies
+this kernel to agent-initiated payments, states the invariant and integration
+obligations, and distinguishes authorization from external settlement.
+
+Run the transaction regression checks against the implementation:
+
+```sh
+python -m unittest discover -s validation -p 'test_transaction_intent.py' -v
+```
