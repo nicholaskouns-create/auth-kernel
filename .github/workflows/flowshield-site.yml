@@ -1,0 +1,21 @@
+name: FlowShield browser model checks
+on:
+  push:
+    paths:
+      - "docs/**"
+      - "flowshield-engine.js"
+      - ".github/workflows/flowshield-site.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Inspect web exports
+        run: |
+          node --input-type=module -e "import('./docs/flowshield-engine.js').then(m=>{for(const s of m.scenarios){const r=m.predict(s); if(s.name==='Safe report'&&r.verdict!=='ALLOW')throw Error('safe case');if(s.name!=='Safe report'&&r.verdict!=='BLOCK')throw Error('unsafe case');} console.log('4/4 model scenarios PASS')})"
