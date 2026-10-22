@@ -1,4 +1,4 @@
-# Authorization kernel
+# Authorization kernel — White Hats
 
 > **Main entry portal:** [The Mathematical City](https://nicholaskouns-create.github.io/website/) — explore the districts, interactive labs, and research index.
 >
@@ -30,3 +30,8 @@ Run the transaction regression checks against the implementation:
 ```sh
 python -m unittest discover -s validation -p 'test_transaction_intent.py' -v
 ```
+
+## White Hats durable defenses
+
+[White Hats](WHITE_HATS.md) provides optional durable grants, narrowing delegation,
+shared sequence budgets, and an immutable dispatch outbox in `white_hats.py`.

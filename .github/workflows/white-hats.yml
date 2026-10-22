@@ -1,0 +1,21 @@
+name: White Hats authorization checks
+on:
+  push:
+    paths:
+      - 'auth_kernel.py'
+      - 'white_hats.py'
+      - 'validation/**'
+      - '.github/workflows/white-hats.yml'
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  authorization:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s validation -p 'test_*.py' -v
+      - run: python validation/authorization_invariant_20261008.py
