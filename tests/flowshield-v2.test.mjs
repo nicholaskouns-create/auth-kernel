@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
-import {analyze,example} from '../docs/flowshield-v2.js';
-import {predict,scenarios} from '../docs/flowshield-engine.js';
+import {readFile} from 'node:fs/promises';
+const load=async p=>import('data:text/javascript;base64,'+Buffer.from(await readFile(new URL(p,import.meta.url))).toString('base64'));
+const {analyze,example}=await load('../docs/flowshield-v2.js');
+const {predict,scenarios}=await load('../docs/flowshield-engine.js');
 const clone=x=>structuredClone(x);
 const base=clone(example);
 const report=analyze(base);
