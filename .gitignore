@@ -1,2 +1,7 @@
 __pycache__/
 *.pyc
+
+# Python packaging output
+build/
+dist/
+*.egg-info/

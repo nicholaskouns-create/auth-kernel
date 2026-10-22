@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {"id": "statement", "classification": "confidential", "trusted": true},
+    {"id": "webpage", "classification": "public", "trusted": false}
+  ],
+  "audiences": {"internal-review": "confidential", "public-post": "public"},
+  "pins": {},
+  "steps": [
+    [
+      {"op": "derive", "id": "summary", "parents": ["statement"]},
+      {"op": "derive", "id": "summary", "parents": ["webpage"]}
+    ],
+    [
+      {"op": "export", "id": "summary", "audience": "internal-review", "purpose": "data"},
+      {"op": "export", "id": "summary", "audience": "public-post", "purpose": "data"},
+      {"op": "export", "id": "summary", "audience": "internal-review", "purpose": "instruction"}
+    ]
+  ]
+}

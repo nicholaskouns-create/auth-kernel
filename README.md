@@ -35,3 +35,14 @@ python -m unittest discover -s validation -p 'test_transaction_intent.py' -v
 
 [White Hats](WHITE_HATS.md) provides optional durable grants, narrowing delegation,
 shared sequence budgets, and an immutable dispatch outbox in `white_hats.py`.
+
+## Anticipatory instruments
+
+[Run the anticipatory toolkit](ANTICIPATORY.md): durable content provenance,
+approved tool-definition pins, and bounded workflow forecasting with concrete
+unsafe-path traces. Includes a [five-project security survey](research/ANTICIPATORY_DEFENSE_SURVEY.md)
+and an offline example; no network access or model endpoint is required.
+
+```sh
+python anticipatory.py examples/anticipatory-plan.json
+```
