@@ -34,7 +34,7 @@ class ReceiptGate:
         digest = receipt.get("digest")
         body = {k:v for k,v in receipt.items() if k not in ("signature","digest")}
         if body.get("schema") != "e47-signed-tick-v1": raise SecurityError("schema mismatch")
-        if body.get("repository") != repo or body.get("commit") != commit_sha:
+        if body.get("repository") != repo or body.get("commit") != commit_sha or body.get("action") != action:
             raise SecurityError("scope mismatch")
         if not isinstance(body.get("run"), str) or not body["run"]:
             raise SecurityError("run missing")
