@@ -1,0 +1,34 @@
+name: Agent authorization boundary lab
+
+on:
+  pull_request:
+    paths:
+      - "integrations/agent_boundary_lab/**"
+      - "integrations/nemo_execution_gate/**"
+      - ".github/workflows/agent-boundary-lab.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-boundary-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Boundary harness (11 tests)
+        working-directory: integrations/agent_boundary_lab
+        run: python -m unittest discover -s . -p 'test_boundaries.py' -v
+      - name: Synthetic protocol subset (12 tests)
+        working-directory: integrations/agent_boundary_lab
+        run: python -m unittest discover -s . -p 'test_mcp_protocol.py' -v
+      - name: NeMo gate regressions (28 tests)
+        working-directory: integrations/nemo_execution_gate
+        run: python -m unittest discover -s tests -v
+      - name: Repeatable synthetic campaign (120 trials)
+        working-directory: integrations/agent_boundary_lab
+        run: python run_campaign.py

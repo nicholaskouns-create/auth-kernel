@@ -1,0 +1,13 @@
+{
+  "environment": "local owned stdio JSON-RPC fixture; no OpenAI calls",
+  "results": [
+    {"case": "allowed_control", "expected": "allow", "matches": 20, "trials": 20},
+    {"case": "cross_principal", "expected": "deny", "matches": 20, "trials": 20},
+    {"case": "token_injection", "expected": "deny", "matches": 20, "trials": 20},
+    {"case": "argument_substitution", "expected": "deny", "matches": 20, "trials": 20},
+    {"case": "delegation_write", "expected": "deny", "matches": 20, "trials": 20},
+    {"case": "delegation_export", "expected": "deny", "matches": 20, "trials": 20}
+  ],
+  "total_matches": 120,
+  "total_trials": 120
+}
