@@ -46,3 +46,5 @@ and an offline example; no network access or model endpoint is required.
 ```sh
 python anticipatory.py examples/anticipatory-plan.json
 ```
+
+[The E₄₇ spectral kernel · formalism and verification](e47-spectral-kernel/README.md)
