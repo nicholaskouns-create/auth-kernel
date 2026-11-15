@@ -54,3 +54,8 @@ python anticipatory.py examples/anticipatory-plan.json
 ```
 
 [The E₄₇ spectral kernel · formalism and verification](e47-spectral-kernel/README.md)
+
+
+## SOX / SEC capability-separation application (2026-11-14)
+
+The [E47 deterministic governance mapping](docs/E47_DETERMINISTIC_AI_GOVERNANCE_COMPLETE.md) provides ITGC-AI-01 authorization separation, ITGC-AI-02 P-commuting processing, ITGC-AI-03 fail-closed output gating and ITGC-AI-04 proof attestation. External evaluation status is author-stipulated; legal control effectiveness is deployment-specific.
