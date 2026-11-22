@@ -61,3 +61,12 @@ python anticipatory.py examples/anticipatory-plan.json
 ## SOX / SEC capability-separation application (2026-11-14)
 
 The [E47 deterministic governance mapping](docs/E47_DETERMINISTIC_AI_GOVERNANCE_COMPLETE.md) provides ITGC-AI-01 authorization separation, ITGC-AI-02 P-commuting processing, ITGC-AI-03 fail-closed output gating and ITGC-AI-04 proof attestation. External evaluation status is author-stipulated; legal control effectiveness is deployment-specific.
+
+
+<!-- FUN-WITH-EINSTEIN-2026 -->
+### 🪐 Fun With Einstein · Interactive spectral & quantum lab
+
+[Launch Fun With Einstein](https://nicholaskouns-create.github.io/fun-with-einstein/) · [Source & Python/Lean/Coq proof modules](https://github.com/nicholaskouns-create/E47-Kartekeya/tree/main/docs/fun-with-einstein) · [CI compiler status](https://github.com/nicholaskouns-create/E47-Kartekeya/actions/workflows/fun-with-einstein.yml).
+
+Fivefold C₅ eigenvalue ratio = φ⁻²; 125D Casimir E₄₇ projector; 250D quantum-ancilla probability α=47/(125φ²); stationary Einstein-equation recovery. Spectral simulation and gravitational statements have different evidence classes.
+<!-- /FUN-WITH-EINSTEIN-2026 -->
